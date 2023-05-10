@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Black sea Pirates" modversion="0.9.0" corepackage="False" gameversion="1.0.9.0">
+  <!--equipments for this mod-->
+  <Item file="%ModDir%/item/weapons.xml"/>
+  <Item file="%ModDir%/item/suits.xml"/>
+  <Item file="%ModDir%/item/mags.xml"/>
+  <!--Pirates will be spawned as monsters-->
+  <Character file="%ModDir%/Characters/Pirateforerunner/Pirateforerunner.xml" />
+  <Character file="%ModDir%/Characters/Piratedismantler/Piratedismantler.xml" />
+  <Character file="%ModDir%/Characters/Pirateboarder/Pirateboarder.xml" />
+  <Character file="%ModDir%/Characters/Pirategunner/Pirategunner.xml" />
+  <Character file="%ModDir%/Characters/Pirateantisub/Pirateantisub.xml" />
+  <Character file="%ModDir%/Characters/Piraterifleman/Piraterifleman.xml" />
+  <Character file="%ModDir%/Characters/Piratemarksman/Piratemarksman.xml" />
+  <Character file="%ModDir%/Characters/Piratebombard/Piratebombard.xml" />
+  <Character file="%ModDir%/Characters/Piratenuker/Piratenuker.xml" />
+  <Character file="%ModDir%/Characters/Pirategrenadier/Pirategrenadier.xml" />
+  <Character file="%ModDir%/Characters/Piratesharpshooter/Piratesharpshooter.xml" />
+  <Character file="%ModDir%/Characters/Pirateveteran/Pirateveteran.xml" />
+  <Character file="%ModDir%/Characters/Piratedesolator/Piratedesolator.xml" />
+  <!--for abandonedoutpost mission-->
+  <NPCSets file="%ModDir%/NPC/AbandonedOutpostNPC.xml" />
+  <!--for More Level Contents pirate outpost-->
+  <!--supposed to override original MLC xml-->
+  <NPCSets file="%ModDir%/NPC/MLCNPC.xml" />
+  <!--Missions and spawn events-->
+  <!--no eventmanagersetting to be compatible with other monster mods?-->
+  <Missions file="%ModDir%/Events/BAEMissions.xml" />
+  <RandomEvents file="%ModDir%/Events/BAErandommissionevents.xml" />
+  <RandomEvents file="%ModDir%/Events/BAErandomcampaignevents.xml" />
+  <Text file="%ModDir%/Text/English.xml" />
+</contentpackage>
