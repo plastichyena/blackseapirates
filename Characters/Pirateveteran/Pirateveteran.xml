@@ -34,8 +34,8 @@
   <ai CombatStrength="500" Sight="3" Hearing="3" AggressionHurt="150" AggressionGreed="5" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="True" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="True" RandomAttack="True" CanOpenDoors="True" UsePathFindingToGetInside="True" KeepDoorsClosed="False" AvoidAbyss="False" StayInAbyss="False" PatrolFlooded="True" PatrolDry="True" StartAggression="0" MaxAggression="100" AggressionCumulation="0" WallTargetingMethod="Target">
     <target damagethreshold="0" Tag="decoy" State="Observe" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target damagethreshold="0" Tag="provocative" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
-    <target damagethreshold="0" Tag="weapon" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
-    <target damagethreshold="0" Tag="human" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="weapon" State="Attack" Priority="70" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="human" State="Attack" Priority="60" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target damagethreshold="0" Tag="nasonov" State="Observe" Priority="30" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target damagethreshold="0" Tag="sonar" State="Attack" Priority="50" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
     <target damagethreshold="0" Tag="turret" State="Attack" Priority="1" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Sweep" PrioritizeSubCenter="False" SweepDistance="3500" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
@@ -47,8 +47,7 @@
     <target damagethreshold="0" tag="leucocyte" state="Avoid" priority="80" reactdistance="1500" attackdistance="0" />
     <SwarmBehavior mindistfromclosest="2000" maxdistfromcenter="4000" cohesion="0.5" />
   </ai>
-  <!--these set up are literaly disaster?-->
-<!--  <inventory arrowslot="9" Slots="Card, Head, Bag, InnerClothes, OuterClothes, LeftHand, RightHand, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="False" Commonness="2">
+  <inventory arrowslot="9" Slots="Card, Head, Bag, InnerClothes, OuterClothes, LeftHand, RightHand, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="False" Commonness="1">
     <Item Identifier="rum" />
     <Item Identifier="cigar" />
     <Item Identifier="oxygen_cell_bw" amount="2"/>
@@ -64,15 +63,15 @@
     <Item Identifier="rum" />
     <Item Identifier="cigar" />
     <Item Identifier="oxygen_cell_bw" amount="2"/>
-    <Item slot="RightHand" Identifier="lasercannon_bp3_e" />
-    <Item slot="LeftHand" Identifier="lasercannon_bp3_e" />
+    <Item slot="RightHand" Identifier="lasercannon_bw_e" />
+    <Item slot="LeftHand" Identifier="lasercannon_bw_e" />
     <Item slot="Bag" Identifier="bandolierbw3" />
     <Item slot="Card" Identifier="idcard" />
     <Item slot="OuterClothes" Identifier="armored_hardsuit_bw2_e" />
     <Item slot="InnerClothes" Identifier="captainsuniformbw" />
     <Item slot="Head" Identifier="ballistichelmetbw" />
-  </inventory>-->
-  <inventory arrowslot="9" Slots="Card, Head, Bag, InnerClothes, OuterClothes, LeftHand, RightHand, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="False" Commonness="1">
+  </inventory>
+  <inventory arrowslot="9" Slots="Card, Head, Bag, InnerClothes, OuterClothes, LeftHand, RightHand, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="False" Commonness="3">
     <Item Identifier="handcannonround" amount="6"/>
     <Item Identifier="rum" />
     <Item Identifier="oxygen_cell_bw" amount="1"/>

@@ -14,6 +14,7 @@
 <character.Piratesharpshooter>Pirate Sharpshooter</character.Piratesharpshooter>
 <character.Pirateveteran>Pirate Veteran</character.Pirateveteran>
 <character.Piratedesolator>Pirate AntiSub</character.Piratedesolator>
+<character.Piratescavenger>Pirate Scavenger</character.Piratescavenger>
 <!--Items-->
 <entityname.hammer_bw_e>The Hammer</entityname.hammer_bw_e>
 <entityname.grenadelauncher_bw_ge>Drum GL</entityname.grenadelauncher_bw_ge>
@@ -30,11 +31,14 @@
 <entityname.lasercannon_bw_e>Experimental Lasercannon</entityname.lasercannon_bw_e>
 <entityname.lasercannon_bp3_e>Disaster</entityname.lasercannon_bp3_e>
 <entityname.handcannonbw_e>Peace Keeper</entityname.handcannonbw_e>
+<entityname.assaultrifle_bae>Assault Rifle</entityname.assaultrifle_bae>
+<entityname.rifle_bae>Rifle</entityname.rifle_bae>
 <entityname.uex2_e>Hammer Detonator</entityname.uex2_e>
 <entityname.bw_grenade_drum_e>Grenade Drum</entityname.bw_grenade_drum_e>
 <entityname.bw_shotgun_drum_e>SG Drum</entityname.bw_shotgun_drum_e>
 <entityname.smgmagazine_bw_e>7.62mm Mag</entityname.smgmagazine_bw_e>
 <entityname.lmgmagazine_bw_e>7.62mm LinkedMag</entityname.lmgmagazine_bw_e>
+<entityname.assaultriflemagazine_e>Assault Rifle Mag</entityname.assaultriflemagazine_e>
 <entityname.HMG1_mag_bw_e>14.5mm AmmoBox</entityname.HMG1_mag_bw_e>
 <entityname.cannonshell_bw_e>Rocket AmmoBox</entityname.cannonshell_bw_e>
 <entityname.SG_ammo_e>SniperRounds</entityname.SG_ammo_e>
@@ -45,7 +49,7 @@
 <entityname.corsairar_bw_e>Pirate Corsair</entityname.corsairar_bw_e>
 <entityname.armored_miningsuit_bw_e>Reinforced Mining Armor</entityname.armored_miningsuit_bw_e>
 <entityname.pio_bw2_e>Pirate Pioneer</entityname.pio_bw2_e>
-<entityname.armored_hardsuit_bw2_e>Stolen X01</entityname.armored_hardsuit_bw2_e>
+<entityname.armored_hardsuit_bw2_e>X01 Veteran</entityname.armored_hardsuit_bw2_e>
 <!--Suits descriptions-->
 <entitydescription.corsairar_bw_e>This suit is locked by biometric authentication.</entitydescription.corsairar_bw_e>
 <entitydescription.armored_miningsuit_bw_e>This suit is locked by biometric authentication.</entitydescription.armored_miningsuit_bw_e>

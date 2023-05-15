@@ -53,7 +53,7 @@ MonsterEvent
   <!--                               Set 1                                       -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <Eventset identifier="BAEOne" minleveldifficulty="25" maxleveldifficulty="40" chooserandom="true" allowatstart="false" additive="true" campaign ="false">
-    <Commonness commonness="2"/>
+    <Commonness commonness="1"/>
     <!--5min-->
     <Eventset identifier="first" chooserandom ="false" minmissiontime="300" minintensity="0.0" maxintensity="1.0">
       <MonsterEvent characterfile="Pirateforerunner" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
@@ -117,7 +117,7 @@ MonsterEvent
   <!--                               Set 2                                       -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <Eventset identifier="BAETwo" minleveldifficulty="41" maxleveldifficulty="70" chooserandom="true" allowatstart="false" additive="true" campaign ="false">
-    <Commonness commonness="2"/>
+    <Commonness commonness="1"/>
     <!--cave ambush-->
     <EventSet identifier="caves" chooserandom="true" percave="false" triggereventcooldown="false" allowatstart="true">
       <MonsterEvent characterfile="Pirateboarder" minamount="2" maxamount="4" spawntype="cave" />
@@ -194,7 +194,7 @@ MonsterEvent
   <!--                               Set 3                                       -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <Eventset identifier="BAEThree" minleveldifficulty="71" maxleveldifficulty="100" chooserandom="true" allowatstart="false" additive="true" campaign ="false">
-    <Commonness commonness="2"/>
+    <Commonness commonness="1"/>
     <!--cave ambush-->
     <EventSet identifier="caves" chooserandom="false" percave="false" triggereventcooldown="false" allowatstart="true">
       <MonsterEvent characterfile="Pirateboarder" minamount="3" maxamount="3" spawntype="cave" />

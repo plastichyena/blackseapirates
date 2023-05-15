@@ -221,6 +221,121 @@
     </LightComponent>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
+  <!--assaultrifle from vanilla-->
+  <Item name="" identifier="assaultrifle_bae" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="true">
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="276,63,233,62" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="276,63,233,62" depth="0.55" origin="0.5,0.5" />
+    <Body width="220" height="50" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
+    </Holdable>
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Assault Rifle Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="276,63,233,62" limb="Torso" scale="0.5" origin="0.5,0.8" />
+    </Wearable>
+    <RangedWeapon reload="0.24" holdtrigger="true" barrelpos="100,20" spread="4" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,200" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="assaultriflemagazine_bae" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="assaultriflemagazine_bae" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="assaultrifleammo" itempos="4,-12" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />   
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="24,4" setactive="true"/>
+      </SubContainer>
+    </ItemContainer> 
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <SkillRequirementHint identifier="weapons" level="50" />
+  </Item>
+  <!--rifle from vanilla-->
+  <Item name="" identifier="rifle_bae" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="254,2,200,55" depth="0.55" origin="0.5,0.25" />
+    <Body width="190" height="50" density="25" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <ItemComponent characterusable="true">
+      <!-- define this here, because it won't work in RangedWeapon:
+        the grenade has been fired and is no longer in the container when OnUse executes -->
+      <StatusEffect type="OnUse" target="This">
+        <RequiredItem items="grenade" type="Contained" targetslot="0" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot1.ogg" type="OnUse" range="1000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot2.ogg" type="OnUse" range="1000" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleGrenadeShot3.ogg" type="OnUse" range="1000" />
+      </StatusEffect>
+    </ItemComponent>
+    <RangedWeapon barrelpos="80,0" unskilledspread="2" combatPriority="70" reload="2" reloadnoskill="2" reloadskillrequirement="40" drawhudwhenequipped="true" crosshairscale="0.15">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="Content/Items/Weapons/WEAPON_rifleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/Weapons/WEAPON_rifleShot2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/WEAPON_rifleShot3.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="150.0" force="2.0" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="2.0" />
+      </StatusEffect>
+      <!-- Cocking sound, delayed by varied seconds. -->
+      <StatusEffect type="OnUse" delay="1" target="Character">
+        <Conditional skillrequirement="true" weapons="gte 50" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload50-_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload50-_2.ogg" type="OnUse" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" delay="1" target="Character" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional skillrequirement="true" weapons="gte 20" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload20-50_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload20-50_2.ogg" type="OnUse" range="500" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" delay="1" target="Character">
+        <Conditional skillrequirement="true" weapons="lt 20" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_2.ogg" type="OnUse" range="500" />
+      </StatusEffect>
+      <RequiredItems items="rifleammo,grenade" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="60" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="riflebullet_bae" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="riflebullet_bae" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+      </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="1" containedspritedepth="0.56">
+      <Containable items="grenade" hide="false" itempos="50,0" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="448,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SubContainer capacity="1" maxstacksize="6">
+        <Containable items="rifleammo" hide="true" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="30,-3" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+    <SkillRequirementHint identifier="weapons" level="60" />
+  </Item>
     <!-- Thunder Cannon normal -->
     <!--adjust selfdamage and launchimpulse for enemy-->
   <Item name="" identifier="rg_bw_n_e" aliases="portable_rail_gun,prg" description="" category="Equipment" cargocontaineridentifier="metalcrate" tags="turret,mediumitem,weapon,gun,gunsmith" Scale="0.8" impactsoundtag="impact_metal_heavy" hideinmenus="true" nonplayerteaminteractable="true">

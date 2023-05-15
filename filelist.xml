@@ -18,6 +18,7 @@
   <Character file="%ModDir%/Characters/Piratesharpshooter/Piratesharpshooter.xml" />
   <Character file="%ModDir%/Characters/Pirateveteran/Pirateveteran.xml" />
   <Character file="%ModDir%/Characters/Piratedesolator/Piratedesolator.xml" />
+  <Character file="%ModDir%/Characters/Piratescavenger/Piratescavenger.xml" />
   <!--for abandonedoutpost mission-->
   <NPCSets file="%ModDir%/NPC/AbandonedOutpostNPC.xml" />
   <!--for More Level Contents pirate outpost-->

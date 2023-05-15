@@ -72,7 +72,7 @@
         <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         <RequiredItem items="oxygentank" type="Contained" excludebroken="false" />
     </StatusEffect>
-    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.25" damagesound="LimbArmor" deflectprojectiles="true" />
+    <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
     <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.75" damagesound="LimbArmor" deflectprojectiles="true" />
     <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
     <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.35" probabilitymultiplier="0.35" damagesound="LimbArmor" deflectprojectiles="true" />
@@ -170,16 +170,16 @@
         <StatusEffect type="OnContained" target="Contained,Character" Condition="1.0" comparison="Or" targetslot="0">
             <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
         </StatusEffect>
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.4" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="explosiondamage" damagemultiplier="0.1" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma" damagemultiplier="0.6" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="bleeding" damagemultiplier="0.75" probabilitymultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="internaldamage" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="internaldamage" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.3" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" damagemultiplier="0.4" probabilitymultiplier="0.4" damagesound="LimbArmor" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
-        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.5" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.8" damagesound="LimbArmor" />
         <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" damagemultiplier="0.7" probabilitymultiplier="0.75" damagesound="LimbArmor" />
     </Wearable>

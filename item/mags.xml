@@ -149,6 +149,66 @@
       <StatusEffect type="OnUse" target="UseTarget" targetidentifiers="ore" DeattachTimer="0.95" />
     </Projectile>
   </Item>
+  <!--assaultrifle magazine from vanilla-->
+  <Item name="assaultmag" identifier="assaultriflemagazine_bae" maxstacksize="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,riflemanbonus" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="true">
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="476,3,36,48" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="476,3,36,48" depth="0.55" origin="0.5,0.5" />
+    <Body width="28" height="40" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="assaultrifleround" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="assaultrifleround" />
+      <StatusEffect type="OnUse" target="This" condition="-0.0" disabledeltatime="true">
+        <SpawnItem identifiers="assaultrifleround_bae" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="assaultrifleround" identifier="assaultrifleround_bae" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+      <Attack structuredamage="10" targetforce="7.5" itemdamage="6" severlimbsprobability="0.2" penetration="0.2">
+        <Affliction identifier="gunshotwound" strength="30" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="stun" strength="0.25" />
+        <Affliction identifier="stun" strength="0.5" probability="0.2" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!--rifle bullet from vanilla-->
+  <Item name="rifleb" identifier="riflebullet_bae" category="Weapon" maxstacksize="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,rifleammo,riflemanbonus" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="128,832,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="233,163,23,9" depth="0.55" origin="0.5,0.5" />
+    <Body width="23" height="9" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+      <Attack structuredamage="50" targetforce="12" itemdamage="15" severlimbsprobability="0.5" penetration="0.45">
+        <Affliction identifier="gunshotwound" strength="55" />
+        <Affliction identifier="bleeding" strength="33" />
+        <Affliction identifier="stun" strength="0.6" />
+        <Affliction identifier="stun" strength="0.9" probability="0.3" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
     <!-- 14.5 Ammo Box -->
   <Item name="" identifier="HMG1_mag_bw_e" scale="0.5" category="Equipment" cargocontaineridentifier="metalcrate" linkable="true" description="" tags="ammobox,smallitem,HMG1_mag_bw,gunsmith" impactsoundtag="impact_metal_light" hideinmenus="true" maxstacksize="2">
     <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/Chaingun/14.5 ammo box.png" sourcerect="0,0,95,72" depth="0.55" />
@@ -222,7 +282,7 @@
     <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="80.0" hitscan="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,50,175" scalemultiplier="1,2" />
-      <Attack structuredamage="70" itemdamage="20" severlimbsprobability="0.5" penetration="0.3">
+      <Attack structuredamage="60" itemdamage="20" severlimbsprobability="0.5" penetration="0.3">
         <Affliction identifier="lacerations" strength="80" />
         <Affliction identifier="bleeding" strength="5.0" />
       </Attack>
@@ -237,7 +297,7 @@
       <StatusEffect type="OnImpact" target="UseTarget" targetidentifiers="door,windoweddoor,hatch,ductblock,aliendoor,alienhatch" Stuck="-10.0" Condition="-10.0" />
       <StatusEffect type="OnUse" target="UseTarget" targetidentifiers="ore" DeattachTimer="17" />
       <StatusEffect type="OnImpact" target="This">
-        <Explosion range="150.0" structuredamage="10" force="4.0" itemdamage="10" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+        <Explosion range="150.0" structuredamage="30" force="4.0" itemdamage="10" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
           <Affliction identifier="burn" strength="40" />
         </Explosion>
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="10" velocitymin="100" velocitymax="2000" scalemin="0.25" scalemax="0.5" />
@@ -274,7 +334,7 @@
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" hitscan="true" spread="0" removeonhit="false" maxtargetstohit="3">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,50,175" scalemultiplier="1,2.5" />
-      <Attack structuredamage="70" severlimbsprobability="0.35" itemdamage="30" targetforce="6" penetration="0.5">
+      <Attack structuredamage="55" severlimbsprobability="0.35" itemdamage="30" targetforce="6" penetration="0.5">
         <Affliction identifier="gunshotwound" strength="100" />
         <Affliction identifier="lacerations" strength="100" />
         <Affliction identifier="stun" strength="3" />
