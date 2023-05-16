@@ -155,7 +155,7 @@
     <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="476,3,36,48" depth="0.55" origin="0.5,0.5" />
     <Body width="28" height="40" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="assaultrifleround" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-      <Containable items="assaultrifleround" />
+      <Containable items="assaultrifleround_bae" />
       <StatusEffect type="OnUse" target="This" condition="-0.0" disabledeltatime="true">
         <SpawnItem identifiers="assaultrifleround_bae" spawnposition="ThisInventory" />
       </StatusEffect>
@@ -334,7 +334,7 @@
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" hitscan="true" spread="0" removeonhit="false" maxtargetstohit="3">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,50,175" scalemultiplier="1,2.5" />
-      <Attack structuredamage="55" severlimbsprobability="0.35" itemdamage="30" targetforce="6" penetration="0.5">
+      <Attack structuredamage="40" severlimbsprobability="0.35" itemdamage="30" targetforce="6" penetration="0.5">
         <Affliction identifier="gunshotwound" strength="100" />
         <Affliction identifier="lacerations" strength="100" />
         <Affliction identifier="stun" strength="3" />

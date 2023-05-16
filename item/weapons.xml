@@ -7,7 +7,7 @@
     <Sprite texture="%ModDir:Maddened Black Sea Armory%/AXE/Hammer.png" sourcerect="0,0,420,200" origin="0.5,0.5" depth="0.55" />
     <Body width="250" height="150" density="60" />
     <MeleeWeapon slots="RightHand+LeftHand" controlpose="true" holdpos="15,-60" aimpos="45,-20" handle1="-30,-3" handle2="15,3" holdangle="45" reload="2" range="200" combatPriority="40" msg="ItemMsgPickUpSelect" preferredcontaineditems="mobilebattery">
-      <Attack targetimpulse="5" severlimbsprobability="0.5" structuredamage="90" itemdamage="0" penetration="0.2">
+      <Attack targetimpulse="5" severlimbsprobability="0.5" structuredamage="100" itemdamage="0" penetration="0.2">
         <Sound file="Content/Items/Weapons/Smack1.ogg" range="800" />
         <Affliction identifier="blunttrauma" strength="40" />
         <Affliction identifier="stun" strength="4" />
@@ -694,7 +694,7 @@
     <Sprite texture="%ModDir:Maddened Black Sea Armory%/LC/ESG.png" sourcerect="0,0,300,124" depth="0.55" />
     <Body width="300" height="124" density="40" />
     <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="35,-10" aimpos="35,-10" handle1="-15,-6" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" />
-    <RangedWeapon reload="4.0" barrelpos="220,13" spread="0" unskilledspread="8" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2" maxchargetime="0.5">
+    <RangedWeapon reload="4.5" barrelpos="220,13" spread="0" unskilledspread="8" combatPriority="50" drawhudwhenequipped="true" crosshairscale="0.2" >
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="50" velocitymax="100" colormultiplier="255,0,0,175" scalemultiplier="1,0.5" />
