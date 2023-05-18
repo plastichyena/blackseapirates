@@ -645,6 +645,78 @@
     </LightComponent>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
+  <!-- Revolution (Sickle HMG upgrade) for enemy-->
+  <Item name="revolution" identifier="HMG1_bp6_e" category="Equipment" description="" cargocontaineridentifier="metalcrate" tags="mgtype,mediumitem,weapon,gun,gunsmith" Scale="0.25" impactsoundtag="impact_metal_light" hideinmenus="true" nonplayerteaminteractable="true">
+    <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/Chaingun/6G.png" sourcerect="0,0,640,280" origin="0.5,0.5" />
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/Chaingun/6G.png" sourcerect="0,0,640,280" depth="0.55" origin="0.5,0.5" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="CG Worn" texture="%ModDir:Maddened Black Sea Armory%/Chaingun/6G.png" sourcerect="0,0,640,280" depth="0.55" origin="0.5,0.9" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" limb="Torso" ignorelimbscale="true" scale="0.25" />
+    </Wearable>
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="140,-120" aimpos="160,-120" handle1="-60,-6" handle2="120,7" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="270,26" spread="3" unskilledspread="16" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.23">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="Content/Items/Weapons/ExplosionSmall1.ogg" type="OnUse" range="6000" selectionmode="Random" />
+      <Sound file="Content/Items/Weapons/ExplosionSmall2.ogg" type="OnUse" range="6000" />
+      <Sound file="Content/Items/Weapons/ExplosionSmall3.ogg" type="OnUse" range="6000" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <StatusEffect type="OnUse">
+        <Explosion range="10.0" force="3" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+      </StatusEffect>
+      <!-- Temporary fix for the recoil while we implement our new recoil -->
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 75" />
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="stun" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="stun" strength="0.25" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 25" />
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="stun" strength="0.75" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-250" />
+      <StatusEffect type="Always" target="This" Condition="6">
+        <Conditional condition="gt 0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Sound file="Content/Items/Weapons/ShotgunLoad1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/ShotgunLoad2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunLoad3.ogg" type="OnUse" range="3000" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" delay="1" stackable="false" />
+      <RequiredItems items="HMG1_mag_bw_e" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="HMG1_mag_bw_e" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="bullet">
+      <Containable items="HMG1_mag_bw_e" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <LightComponent range="500.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" flicker="0.1">
+      <StatusEffect type="Always" target="This,Character" Voltage="1.0" setvalue="true">
+        <Conditional IsDead="false" />
+      </StatusEffect>
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.07, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
   <!-- Axe Rocket Cannon enemy -->
   <Item name="" identifier="battlecannon_bw_e" aliases="battlecannon" description="" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" Scale="0.3" impactsoundtag="impact_metal_heavy" hideinmenus="true" nonplayerteaminteractable="true">
     <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/PRG/BC.png" sourcerect="0,0,640,280" origin="0.5,0.5" />
@@ -685,6 +757,75 @@
         <Conditional IsDead="false" />
       </StatusEffect>
       <LightTexture texture="%ModDir:Maddened Black Sea Armory%/Boarding Shield/pointlight_ultra.png" origin="0.05, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Experimental Chaingun for enemy -->
+  <Item name="chaingun" identifier="minichaingun_bw_e" category="Equipment" description="" cargocontaineridentifier="metalcrate" tags="mgtype,mediumitem,weapon,gun,gunsmith" Scale="0.2" impactsoundtag="impact_metal_light">
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="CG Worn" texture="%ModDir:Maddened Black Sea Armory%/chaingun/chaingun.png" sourcerect="0,0,640,280" depth="0.55" origin="0.5,0.9" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" limb="Torso" ignorelimbscale="true" scale="0.2" />
+    </Wearable>
+    <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/chaingun/chaingun.png" sourcerect="0,0,640,280" origin="0.5,0.5" />
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/chaingun/chaingun.png" sourcerect="0,0,640,280" depth="0.55" origin="0.5,0.5" />
+    <Body width="72" height="40" density="50" />
+    <Holdable slots="RightHand" controlpose="true" holdpos="140,-120" aimpos="160,-120" handle1="-60,-6" handle2="120,7" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="250,13" spread="1" unskilledspread="16" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reload="0.05">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot4.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot5.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot6.ogg" type="OnUse" range="3000" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <StatusEffect type="OnUse">
+        <Explosion range="10.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="5.0" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+      <!-- Forbidden in mortal bodies -->
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional recoilstabilized="gte 1" />
+        <Explosion range="10.0" force="0.8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" targetlimbs="RightHand">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional recoilstabilized="gte 1" />
+        <Affliction identifier="blunttrauma" strength="0.15" probability="0.4" LimbSpecific="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" targetlimbs="RightHand">
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="blunttrauma" strength="0.2" LimbSpecific="true" />
+        <Affliction identifier="blunttrauma" strength="0.4" LimbSpecific="true" probability="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional recoilstabilized="lte 0" />
+        <Explosion range="60.0" force="0.8" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+        <Affliction identifier="stun" strength="0.1" />
+        <Affliction identifier="blunttrauma" strength="0.15" probability="0.1" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="chaingun_ammo_bw_e" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="chaingun_ammo_bw_e" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="bullet">
+      <Containable items="chaingun_ammo_bw_e" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <LightComponent range="500.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" flicker="0.1">
+      <StatusEffect type="Always" target="This,Character" Voltage="1.0" setvalue="true">
+        <Conditional IsDead="false" />
+      </StatusEffect>
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.07, 0.5" size="1.0,1.0" />
     </LightComponent>
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
@@ -862,8 +1003,122 @@
       <Containable items="handcannonround" />
     </ItemContainer>
     <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
-    <Quality>
-      <QualityStat stattype="FirepowerMultiplier" value="0.3" />
-    </Quality>
+  </Item>
+  <!-- Experimental Portable Railgun for enemy-->
+  <Item name="Experimentalrailgun" identifier="prg_bw_e" aliases="portable_rail_gun,prg" description="" category="Equipment" cargocontaineridentifier="metalcrate" tags="turret,mediumitem,weapon,gun,gunsmith" Scale="0.65" impactsoundtag="impact_metal_heavy" hideinmenus="true" nonplayerteaminteractable="true">
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Autoshogun Worn" texture="%ModDir:Maddened Black Sea Armory%/PRG/PRG.png" sourcerect="0,0,280,125" depth="0.55" origin="0.5,0.9" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" limb="Torso" ignorelimbscale="true" scale="0.65" />
+    </Wearable>
+    <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/PRG/PRG.png" sourcerect="0,0,280,124" />
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/PRG/PRG.png" sourcerect="0,0,280,125" depth="0.55" />
+    <Body width="254" height="96" density="40" />
+    <Holdable slots="RightHand,LeftHand" controlpose="true" holdpos="30,10" aimpos="30,10" handle1="8,-16" handle2="96,-32" holdangle="-40" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon barrelpos="160,22" spread="5" unskilledspread="25" reload="6" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.1">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <ParticleEmitter particle="muzzleflashrailgun" particleamount="1" velocitymin="50" velocitymax="100" />
+      <sound file="Content/Items/Weapons/Railgun1.ogg" range="6000" type="OnUse" />
+      <sound file="Content/Items/Weapons/Railgun2.ogg" range="6000" type="OnUse" />
+      <sound file="Content/Items/Weapons/Railgun3.ogg" range="6000" type="OnUse" />
+      <ChargeSound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" range="3000" />
+      <StatusEffect type="OnUse">
+        <Explosion range="100.0" force="6" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="9.0" />
+      </StatusEffect>
+      <!-- Forbidden in mortal bodies -->
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 40" />
+        <Conditional recoilstabilized="gte 1" />
+        <Affliction identifier="blunttrauma" strength="0.4" probability="0.2" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" targetlimbs="RightHand">
+        <Conditional skillrequirement="true" weapons="lt 40" />
+        <Conditional recoilstabilized="gte 1" />
+        <Affliction identifier="blunttrauma" strength="0.8" probability="0.4" LimbSpecific="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" targetlimbs="RightHand">
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="blunttrauma" strength="1.6" LimbSpecific="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional recoilstabilized="lte 0" />
+        <Affliction identifier="stun" strength="0.8" />
+        <Affliction identifier="blunttrauma" strength="0.6" probability="0.2" />
+      </StatusEffect>
+      <!-- End of Forbidden in mortal bodies -->
+      <RequiredItems identifier="prg_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="40" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="prg_ammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="prg_ammo" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer autofill="False" capacity="1" maxstacksize="3" canbeselected="false" hideitems="true">
+      <Containable identifiers="prg_ammo" />
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <LightComponent range="500.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" flicker="0.1">
+      <StatusEffect type="Always" target="This,Character" Voltage="1.0" setvalue="true">
+        <Conditional IsDead="false" />
+      </StatusEffect>
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.07, 0.5" size="1.0,1.0" />
+    </LightComponent>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <!-- Conqueror for enemy -->
+  <Item name="conqueror" identifier="ancientweaponbw_e" category="Alien" Tags="energytype,alien,mediumitem,weapon,gunsmith" scale="0.7" impactsoundtag="impact_metal_light" hideinmenus="false">
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Autoshogun Worn" texture="%ModDir:Maddened Black Sea Armory%/Boarding Shield/GUN.png" sourcerect="0,0,220,120" depth="0.55" origin="0.5,0.9" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" limb="Torso" ignorelimbscale="true" scale="0.7" />
+    </Wearable>
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/Boarding Shield/GUN.png" sourcerect="0,0,220,120" depth="0.55" origin="0.5,0.5" />
+    <Body width="238" height="63" density="70" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
+    <RangedWeapon reload="0.01" barrelpos="118,12" spread="0" unskilledspread="10" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="FlareBubbles" scalemin="1.4" scalemax="1.8" particleamount="14" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
+      <ParticleEmitter particle="GlowDot" scalemin="1.5" scalemax="1.5" particleamount="20" anglemin="0" anglemax="360" velocitymin="0" velocitymax="0" colormultiplier="10,235,195,255" />
+      <StatusEffect type="OnUse">
+        <Explosion range="50.0" force="3" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="3.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <ParticleEmitterCharge particle="chargenucleargun" particlespersecond="60" scalemultiplier="0.75,0.75" scalemin="1.0" scalemax="1.0" anglemin="0" anglemax="359" />
+      <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Engineer/WEAPONS_rapidFissileAccelerator4.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse" target="Contained" Condition="3" disabledeltatime="true">
+        <RequiredItem items="alienpowercell_e" type="Contained" msg="ItemMsgBatteryCellRequired" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-100" disabledeltatime="true">
+        <RequiredItem items="bwapc" type="Contained" msg="ItemMsgBatteryCellRequired" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" delay="2.5" stackable="false" />
+      <RequiredItems items="alienpowercell_e,bwapc" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="25" />
+      <StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+        <SpawnItem identifier="alienpowercell_e" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This">
+        <Remove />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer itemrotation="90" capacity="1" maxstacksize="1" hideitems="true" itempos="10,-5" containedspritedepth="0.56" containedstateindicatorstyle="batterycell">
+      <Containable items="alienpowercell_e,bwapc" />
+    </ItemContainer>
+    <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+    <LightComponent range="500.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" flicker="0.1">
+      <StatusEffect type="Always" target="This,Character" Voltage="1.0" setvalue="true">
+        <Conditional IsDead="false" />
+      </StatusEffect>
+      <LightTexture texture="Content/Lights/lightcone.png" origin="-0.07, 0.5" size="1.0,1.0" />
+    </LightComponent>
   </Item>
 </Items>

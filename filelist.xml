@@ -19,6 +19,19 @@
   <Character file="%ModDir%/Characters/Pirateveteran/Pirateveteran.xml" />
   <Character file="%ModDir%/Characters/Piratedesolator/Piratedesolator.xml" />
   <Character file="%ModDir%/Characters/Piratescavenger/Piratescavenger.xml" />
+  <Character file="%ModDir%/Characters/Coalitionheavy/Coalitionheavy.xml" />
+  <Character file="%ModDir%/Characters/Coalitionveteran/Coalitionveteran.xml" />
+  <Character file="%ModDir%/Characters/Coalitionannihilator/Coalitionannihilator.xml" />
+  <Character file="%ModDir%/Characters/Coalitiongunner/Coalitiongunner.xml" />
+  <Character file="%ModDir%/Characters/Coalitionsharpshooter/Coalitionsharpshooter.xml" />
+  <Character file="%ModDir%/Characters/Coalitionantisub/Coalitionantisub.xml" />
+  <Character file="%ModDir%/Characters/Coalitionrifleman/Coalitionrifleman.xml" />
+  <Character file="%ModDir%/Characters/Separatistrifleman/Separatistrifleman.xml" />
+  <Character file="%ModDir%/Characters/Separatistveteran/Separatistveteran.xml" />
+  <Character file="%ModDir%/Characters/Separatistgunner/Separatistgunner.xml" />
+  <Character file="%ModDir%/Characters/Separatistantisub/Separatistantisub.xml" />
+  <Character file="%ModDir%/Characters/Separatistbombard/Separatistbombard.xml" />
+  <Character file="%ModDir%/Characters/Separatistsharpshooter/Separatistsharpshooter.xml" />
   <!--for abandonedoutpost mission-->
   <NPCSets file="%ModDir%/NPC/AbandonedOutpostNPC.xml" />
   <!--for More Level Contents pirate outpost-->

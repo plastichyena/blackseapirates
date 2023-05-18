@@ -539,4 +539,74 @@
       <Containable items="smallitem" />
     </ItemContainer>
   </Item>  
+  <!-- Experimental Chaingun Ammo Box -->
+  <Item name="chaingunammo" identifier="chaingun_ammo_bw_e" aliases="Chaingun Ammo Box" scale="0.5" tags="ammobox,smallitem,mobilecontainer,gunsmith" description="" category="Equipment" linkable="false" impactsoundtag="impact_metal_heavy" hideinmenus="true" nonplayerteaminteractable="True">
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/Chaingun/chain gun ammo box.png" depth="0.54" sourcerect="0,0,95,72" origin="0.5,0.5" />
+    <ContainedSprite allowedcontainertags="weapon" texture="%ModDir:Maddened Black Sea Armory%/Chaingun/chain gun ammo box.png" depth="0.54" sourcerect="0,0,96,72" origin="0.5,0.5">
+      <StatusEffect type="Always" target="This" targetitemcomponent="ContainedSprite" setvalue="true" sourcerect="0,0,95,70">
+        <Conditional condition="eq 0" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This" targetitemcomponent="ContainedSprite" setvalue="true" sourcerect="0,0,95,70" />
+    </ContainedSprite>
+    <Body width="75" height="155" density="50" />
+    <Holdable slots="RightHand+LeftHand" holdpos="50,-30" handle1="-15,15" handle2="-15,15" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
+    <ItemContainer autofill="False" hideitems="true" capacity="1" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true">
+      <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+      <StatusEffect type="OnUse" target="This" condition="-0.0" disabledeltatime="true">
+        <SpawnItem identifiers="chaingun_round_bw_e" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+      <Containable identifiers="chaingun_round_bw_e" />
+    </ItemContainer>
+  </Item>
+  <!-- Chaingun Bullet for enemy-->
+  <Item name="Experimental Chaingun Round" identifier="chaingun_round_bw_e" category="Misc" interactthroughwalls="true" tags="smallitem,round,hmgammotype" impactsoundtag="impact_metal_light" scale="0.2" hideinmenus="true" nonplayerteaminteractable="True">
+    <InventoryIcon texture="%ModDir:Maddened Black Sea Armory%/Chaingun/chaingun round.png" sourcerect="0,0,36,8" depth="0.55" />
+    <Sprite texture="%ModDir:Maddened Black Sea Armory%/Chaingun/chaingun round2.png" sourcerect="0,0,36,9" origin="0.5,0.5" />
+    <Body width="160" height="10" density="15" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" hitscan="true" spread="6" maxtargetstohit="2" removeonhit="false">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,50,175" scalemultiplier="1,0.5" />
+      <Attack structuredamage="3" severlimbsprobability="0.35" itemdamage="0.5" targetforce="0.1" penetration="0.35">
+        <Affliction identifier="gunshotwound" strength="6" />
+        <Affliction identifier="lacerations" strength="6" />
+        <Affliction identifier="stun" strength="0.01" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact">
+        <ParticleEmitter particle="bubbles" anglemin="-180" anglemax="180" particleamount="1" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="-10" velocitymax="-300" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget" targetidentifiers="door,windoweddoor,hatch,ductblock,aliendoor,alienhatch" Stuck="-0.66" Condition="-0.66" />
+      <StatusEffect type="OnUse" target="UseTarget" targetidentifiers="ore" DeattachTimer="0.95" />
+    </Projectile>
+  </Item>
+  <!--alienpowercell for enemy-->
+  <Item name="powercell" identifier="alienpowercell_e" category="Alien,Equipment" maxstacksize="8" Tags="alien,smallitem,alienpowercell" scale="0.3" impactsoundtag="impact_metal_light" hideinmenus="true">
+    <Sprite texture="Content/Items/Alien/AlienRuins_Items.png" sourcerect="0,1952,34,77" depth="0.7" origin="0.5,0.5" />
+    <LightComponent AllowInGameEditing="false" lightcolor="112,146,190,30" canbeselected="false" range="100.0" IsOn="true" castshadows="false" />
+    <Body radius="15" height="40" density="30" />
+    <Holdable slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+      <!--<StatusEffect type="OnContained" target="Character">
+        <Affliction identifier="burn" strength="0.15" />
+      </StatusEffect>-->
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="alienprojectile" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="battery">
+      <Containable items="alienprojectile" />
+      <StatusEffect type="OnUse" target="This" condition="-0.0" disabledeltatime="true">
+        <SpawnItem identifiers="alienprojectile" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
 </Items>
