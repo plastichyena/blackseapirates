@@ -53,7 +53,7 @@ MonsterEvent
   <!--                               Set 1                                       -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
   <Eventset identifier="BAEOne" minleveldifficulty="25" maxleveldifficulty="40" chooserandom="true" allowatstart="false" additive="true" campaign ="false">
-    <Commonness commonness="2"/>
+    <Commonness commonness="3"/>
     <!--3min-->
     <Eventset identifier="first" chooserandom ="false" minmissiontime="180" minintensity="0.0" maxintensity="1.0">
       <MonsterEvent characterfile="Pirateforerunner" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
