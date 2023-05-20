@@ -51,7 +51,7 @@
     <Item Identifier="cigar" />
     <Item Identifier="oxygen_cell_bw" amount="2"/>
     <Item slot="RightHand" Identifier="prg_bw_e" />
-    <Item slot="LeftHand" Identifier="prg_bw_e" />
+    <Item slot="LeftHand" Identifier="shield_bw" />
     <Item slot="Bag" Identifier="bandolierbw3" />
     <Item slot="Card" Identifier="idcard" />
     <Item slot="OuterClothes" Identifier="armored_hardsuit_bw2_e" />
